@@ -18,17 +18,19 @@ public class User implements Serializable {
     private String name;
     private String email;
     private String password;
+    private String phone ;
 
-    public User(Long i, String maria, String mail, String number, String id){
-
-    }
-
-    public User(Long id, String name, String email, String password) {
+    public User(Long id, String name, String email, String phone, String password) {
         this.id = id;
         this.name = name;
         this.email = email;
+        this.phone = phone;
         this.password = password;
     }
+
+//    public User(Long i, String name, String mail, String number, String id){
+//
+//    }
 
     public Long getId() {
         return id;
@@ -40,6 +42,14 @@ public class User implements Serializable {
 
     public String getName() {
         return name;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     public void setName(String name) {
