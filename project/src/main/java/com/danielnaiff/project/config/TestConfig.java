@@ -2,6 +2,7 @@ package com.danielnaiff.project.config;
 
 import com.danielnaiff.project.entities.Order;
 import com.danielnaiff.project.entities.User;
+import com.danielnaiff.project.repositories.OrderRepository;
 import com.danielnaiff.project.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -18,6 +19,9 @@ public class TestConfig implements CommandLineRunner {
     @Autowired
     private UserRepository userRepository;
 
+    @Autowired
+    private OrderRepository orderRepository;
+
     @Override
     public void run(String... args) throws Exception {
         User u1 = new User(null, "Maria Brown", "maria@gmail.com", "988888888", "123456");
@@ -29,5 +33,6 @@ public class TestConfig implements CommandLineRunner {
 
 
         userRepository.saveAll(Arrays.asList(u1, u2));
+        orderRepository.saveAll(Arrays.asList(o1,o2,o3));
     }
 }
